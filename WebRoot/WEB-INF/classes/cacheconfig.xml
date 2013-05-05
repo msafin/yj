@@ -1,0 +1,20 @@
+<all-config>
+	<config name="apkFileCache">
+		<class name='com.qq.jutil.jcache.adv.AdvCache'>
+			<property name='timeout' value='15' />
+			<!-- 超时秒数，按照创建时间为进行检查，当检查到元素生存期超过这个时间时，调用item_handler_class设置指定的类，并指明为超时元素 
+				! -->
+			<property name='max_size' value='10' />
+			<!-- 最大大小，当cache超过该大小时，调用item_handler_class设置指定的类，并指明为淘汰元素 -->
+			<property name='cleanup_rate' value='20' />
+			<!-- 淘汰百分比，当进行淘汰时，淘汰元素的百分比! -->
+			<property name='save_file_path' />
+			<!-- 每隔一段时间把cache持久化到文件，若不设置该选项或为空，则不进行持久化 ! -->
+			<property name='save_interval' />
+			<!-- 持久化的时间间隔 ! -->
+			<property name='auto_recover' value='false' />
+			<!-- 是否自动恢复，若是，则在初始化cache时自动从文件中读取内容并添加到cache中 ! -->
+		</class>
+		<check_interval value="7" /> <!-- 检查时间间隔，单位：秒 ! -->
+	</config>
+</all-config>
